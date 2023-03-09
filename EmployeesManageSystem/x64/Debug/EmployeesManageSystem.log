@@ -1,0 +1,7 @@
+﻿  EmployeeManage.cpp
+E:\CS_Source\CppSource\FirstProject-EmployeeManageSystembyCppandMySQL\EmployeesManageSystem\EmployeeManage.cpp(71,35): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  main.cpp
+  ManageSystem.cpp
+  UserManage.cpp
+  正在生成代码...
+  EmployeesManageSystem.vcxproj -> E:\CS_Source\CppSource\FirstProject-EmployeeManageSystembyCppandMySQL\x64\Debug\EmployeesManageSystem.exe
