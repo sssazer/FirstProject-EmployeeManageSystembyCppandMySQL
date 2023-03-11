@@ -307,20 +307,17 @@ void UserManage::mainUser() {
 		system("cls");
 		printMain();
 		cout << "请输入需要使用的功能编号：";
-		char input;
-		cin >> input;
-		// 对输入的数据做检测
-		if (input >= '0' && input <= '9') {
-			optIndex = input - '0';
-		}
-		else {
-			cout << "选择有误，请重新选择" << endl;
-			system("pause");
+		int input;
+		if(!(cin >> input)){ // 读入并检测数据
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "输入有误，请重新输入" << endl;
+			cin.get();
 			continue;
 		}
 #pragma endregion
 #pragma region 根据操作码执行对应操作
-		switch (optIndex) {
+		switch (input) {
 		case Optcode::QUIT: // 退出
 			cout << "退出成功" << endl;
 			system("pause");

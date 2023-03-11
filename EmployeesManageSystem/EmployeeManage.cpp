@@ -247,18 +247,14 @@ void EmployeeManage::alterEmpInfo() {
 		cout << "1.姓名  2.电话  3.岗位  4.薪资  5.管理者ID" << endl;
 		while (true) { // 获取并检测用户选择
 			cout << "请输入要修改的信息项编号：";
-			cin.sync();
-			char temp;
-			cin >> temp;
-			if (temp >= '1' && temp <= '5') {
-				targetField = temp - '0';
+			if (cin >> targetField) {
 				break;
 			}
-			else {
-				cout << "您的选择有误，请重新选择" << endl;
-				system("pause");
-				continue;
-			}
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "您的选择有误，请重新输入" << endl;
+			system("pause");
+			continue;
 		}
 #pragma endregion
 
@@ -405,14 +401,10 @@ void EmployeeManage::mainEmpRoot() {
 			system("cls");
 			printMain(1);
 			cout << "请输入需要使用的功能编号：";
-			char input;
-			cin >> input;
-			// 对输入的数据做检测
-			if (input >= '0' && input <= '9') {
-				optIndex = input - '0';
-			}
-			else {
-				cout << "选择有误，请重新选择" << endl;
+			if (!(cin >> optIndex)) { // 读入并检测操作代码
+				cin.clear();
+				cin.ignore(INT_MAX, '\n');
+				cout << "输入有误，请重新输入" << endl;
 				system("pause");
 				continue;
 			}
@@ -461,14 +453,10 @@ void EmployeeManage::mainEmpOrdinary() {
 		system("cls");
 		printMain(0);
 		cout << "请输入需要使用的功能编号：";
-		char input;
-		cin >> input;
-		// 对输入的数据做检测
-		if (input >= '0' && input <= '9') {
-			optIndex = input - '0';
-		}
-		else {
-			cout << "选择有误，请重新选择" << endl;
+		if (!(cin >> optIndex)) { // 读入并检测操作代码
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "输入有误，请重新输入" << endl;
 			system("pause");
 			continue;
 		}

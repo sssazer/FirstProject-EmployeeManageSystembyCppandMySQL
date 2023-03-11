@@ -80,21 +80,30 @@ void ManageSystem::mainPage() {
 	if(isRoot){
 		while (true) {
 			system("cls");
-			cout << "0、用户管理系统" << endl;
-			cout << "1、员工管理系统" << endl;
-			cout << "2、退出系统" << endl;
+			cout << "0、退出系统" << endl;
+			cout << "1、用户管理系统" << endl;
+			cout << "2、员工管理系统" << endl;
 			cout << "请选择要进入的系统（0/1/2）：";
+
 			int sysChoice;
-			cin >> sysChoice;
-			if (sysChoice == 2) {
+			if (! (cin >> sysChoice)) { // 读取并检测输入，如果输入非法，cin会置为false，并进入错误状态
+				cin.clear(); // 将cin的错误状态清除
+				cin.ignore(INT_MAX, '\n'); // 清除输入缓冲区
+				cout << "输入有误，请重新输入" << endl;
+				cin.get();
+				continue;
+			}
+			
+			if (sysChoice == 0) {
 				cout << "退出成功" << endl;
 				system("pause");
 				exit(0);
-			}else if(sysChoice == 1){
-				em.mainEmpRoot();
 			}
-			else if(sysChoice == 0){
+			else if(sysChoice == 1){
 				um.mainUser();
+			}
+			else if(sysChoice == 2){
+				em.mainEmpRoot();
 			}
 			else {
 				cout << "输入错误，请重新输入" << endl;

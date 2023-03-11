@@ -27,8 +27,6 @@ private:
 		CLEAR = 7
 	};
 
-	int optIndex;
-
 	void printMain();
 	void printTableHead(); // 打印表头信息
 	void showUsrInfo(); // 显示所有用户账号

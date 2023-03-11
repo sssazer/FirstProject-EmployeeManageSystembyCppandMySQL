@@ -3,13 +3,16 @@
 
 using namespace std;
 
+int test(int a, int &b) {
+	return a + b;
+}
+
+int test(int a, const int &b) {
+	return a - b;
+}
+
 int main() {
 	ManageSystem ms;
 	ms.mainPage();
-
-	//char* test = new char[5];
-	//cin >> test;
-	//cout << test;
-	//delete test;
 	return 0;
 }
